@@ -14,4 +14,14 @@ class UserCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addreeeLabel: UILabel!
     
+    var userData: User?
+    
+    public func configureCell(for: User) {
+        guard let user = userData else {
+            return
+        }
+        profilImageView.image = UIImage(contentsOfFile: user.picture.medium)
+        nameLabel.text = "\(user.name.first) \(user.name.last)"
+        addreeeLabel.text = user.location.city
+    }
 }

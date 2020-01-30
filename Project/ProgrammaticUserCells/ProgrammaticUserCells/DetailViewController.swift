@@ -9,22 +9,27 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userAddressLabel: UILabel!
+    @IBOutlet weak var userPWLabel: UILabel!
+    
+    var detailUserInfo: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func updateUI() {
+        guard let user = detailUserInfo else {
+            return
+        }
+        backgroundView.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        userNameLabel.text = "\(user.name.first) \(user.name.last)"
+        userAddressLabel.text = "\(user.location.city), \(user.location.state)"
+        userPWLabel.text = user.email
+        userImageView.image = UIImage(contentsOfFile: user.picture.large)
     }
-    */
-
 }
