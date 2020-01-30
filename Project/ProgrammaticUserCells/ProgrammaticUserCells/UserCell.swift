@@ -14,22 +14,18 @@ class UserCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addreeeLabel: UILabel!
     
-    var userData: User?
-    
-    public func configureCell(for: User) {
-        guard let user = userData else {
-            return
-        }
+    public func configureCell(for user: User) {
+      
         profilImageView.image = UIImage(contentsOfFile: user.picture.medium)
         nameLabel.text = "\(user.name.first) \(user.name.last)"
         addreeeLabel.text = user.location.city
         
-        ImageCLient.getImage(urlString: user.picture.large) { (result) in
+        ImageCLient.getImage(urlString: user.picture.large) { [weak self] (result) in
             switch result {
             case .failure(_):
-                self.profilImageView.image = UIImage(systemName: "person.fill")
+                self?.profilImageView.image = UIImage(systemName: "person.fill")
             case .success(let image):
-                self.profilImageView.image = image
+                self?.profilImageView.image = image
             }
         }
     }

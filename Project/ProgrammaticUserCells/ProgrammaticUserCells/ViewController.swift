@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         users.collectionView.dataSource = self
         users.collectionView.delegate = self
         users.collectionView.register(UINib(nibName: "UserCell", bundle: nil), forCellWithReuseIdentifier: "userCell")
+//        users.collectionView.register(UserCell.self, forCellWithReuseIdentifier: "userCell")
         getUserInfo()
     }
     
@@ -47,6 +48,13 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "userCell", for: indexPath) as? UserCell else {
             fatalError("could not downcast UserCell")
         }
+        UIView.animate(withDuration: 0.3, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1.05,1.05,1)
+        },completion: { finished in
+            UIView.animate(withDuration: 0.1, animations: {
+                cell.layer.transform = CATransform3DMakeScale(1,1,1)
+            })
+        })
         let userData = userInfo[indexPath.row]
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 7
