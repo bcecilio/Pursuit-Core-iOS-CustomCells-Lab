@@ -23,5 +23,14 @@ class UserCell: UICollectionViewCell {
         profilImageView.image = UIImage(contentsOfFile: user.picture.medium)
         nameLabel.text = "\(user.name.first) \(user.name.last)"
         addreeeLabel.text = user.location.city
+        
+        ImageCLient.getImage(urlString: user.picture.large) { (result) in
+            switch result {
+            case .failure(_):
+                self.profilImageView.image = UIImage(systemName: "person.fill")
+            case .success(let image):
+                self.profilImageView.image = image
+            }
+        }
     }
 }

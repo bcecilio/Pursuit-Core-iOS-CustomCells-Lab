@@ -30,6 +30,14 @@ class DetailViewController: UIViewController {
         userNameLabel.text = "\(user.name.first) \(user.name.last)"
         userAddressLabel.text = "\(user.location.city), \(user.location.state)"
         userPWLabel.text = user.email
-        userImageView.image = UIImage(contentsOfFile: user.picture.large)
+        
+        ImageCLient.getImage(urlString: user.picture.large) { [weak self] (result) in
+            switch result {
+            case .failure(_):
+                self?.userImageView.image = UIImage(systemName: "person.fill")
+            case .success(let image):
+                self?.userImageView.image = image
+            }
+        }
     }
 }

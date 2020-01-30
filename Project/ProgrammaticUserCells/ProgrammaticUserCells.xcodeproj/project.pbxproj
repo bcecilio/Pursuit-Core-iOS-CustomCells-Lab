@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B70F5B9E23E27516003A95C7 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70F5B9D23E27516003A95C7 /* UIImage+Extensions.swift */; };
 		B7A871DE23E22DBC0073EF55 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A871DD23E22DBC0073EF55 /* UsersView.swift */; };
 		B7A871E023E2303F0073EF55 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A871DF23E2303F0073EF55 /* DetailViewController.swift */; };
 		B7A871E223E230630073EF55 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A871E123E230630073EF55 /* UserCell.xib */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B70F5B9D23E27516003A95C7 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		B7A871DD23E22DBC0073EF55 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		B7A871DF23E2303F0073EF55 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B7A871E123E230630073EF55 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				CDA0F5F42348FE8800B2E7F0 /* AppError.swift */,
 				CDA0F5F62348FE9600B2E7F0 /* NetworkHelper.swift */,
 				CDA0F5F82348FEB800B2E7F0 /* UsersFetchingService.swift */,
+				B70F5B9D23E27516003A95C7 /* UIImage+Extensions.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				CDA0F5F02348F7E300B2E7F0 /* User.swift in Sources */,
 				CDA0F5D22348F74900B2E7F0 /* ViewController.swift in Sources */,
 				CDA0F5F52348FE8800B2E7F0 /* AppError.swift in Sources */,
+				B70F5B9E23E27516003A95C7 /* UIImage+Extensions.swift in Sources */,
 				CDA0F5CE2348F74900B2E7F0 /* AppDelegate.swift in Sources */,
 				CDA0F5F92348FEB800B2E7F0 /* UsersFetchingService.swift in Sources */,
 				CDA0F5F72348FE9600B2E7F0 /* NetworkHelper.swift in Sources */,
